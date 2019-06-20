@@ -3,14 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "test:e2e": "vue-cli-service test:e2e",
+    "dev": "vue-cli-service serve --mode local",
+    "serve:tests": "vue-cli-service serve --mode tests",
+    "serve:prod": "vue-cli-service serve --mode production",
+    "build:dev": "vue-cli-service build --mode development",
+    "build:test": "vue-cli-service build --mode tests",
+    "build:prod": "vue-cli-service build --mode production",
+    "lintfix": "vue-cli-service lint --fix .js,.vue src",
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "glob": "^7.1.4",
     "vue": "^2.6.10"
   },
   "devDependencies": {
@@ -27,7 +31,9 @@
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "uglifyjs-webpack-plugin": "^2.1.3",
+    "webpack-bundle-analyzer": "^3.3.2"
   },
   "eslintConfig": {
     "root": true,
